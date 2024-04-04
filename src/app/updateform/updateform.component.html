@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-content>
+
+    <ion-row>
+      <ion-col>
+
+          <ion-label position="floating">Degree</ion-label>
+          <ion-input [value]="angle.degrees" type="number" #Inputd></ion-input>
+          <ion-label position="floating">Minutes</ion-label>
+          <ion-input [value]="angle.minutes" type="number" #Inputm></ion-input>
+      </ion-col>
+      <ion-col>
+
+        <ion-label position="floating">Seconds</ion-label>
+        <ion-input [value]="angle.seconds" type="number" #Inputs></ion-input>
+        <ion-label position="floating">Polus</ion-label>
+        <ion-select [value]="angle.polus" #Inputp>
+          <ion-select-option value="+">+</ion-select-option>
+          <ion-select-option value="-">-</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+
+  <ion-button (click)="save(Inputd.value, Inputm.value, Inputs.value, Inputp.value)">Save</ion-button>
+
+</ion-card>

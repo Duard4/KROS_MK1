@@ -1,0 +1,43 @@
+<form [formGroup]="angleForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Angle</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Degrees</ion-label>
+            <ion-input id="degrees" type="number" min="0" max="359" formControlName="degrees"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Minutes</ion-label>
+            <ion-input id="minutes" type="number" min="0" max="59" formControlName="minutes"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Seconds</ion-label>
+            <ion-input id="seconds" type="number" min="0" max="59" formControlName="seconds"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Positive / Negative</ion-label>
+            <ion-select  value="+" formControlName="polus" >
+              <ion-select-option value="+">+</ion-select-option>
+              <ion-select-option value="-">-</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-button type="submit" expand="full" [disabled]="!angleForm.valid">
+        <ion-icon></ion-icon>
+        Add Angle
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  
+
+</form>
